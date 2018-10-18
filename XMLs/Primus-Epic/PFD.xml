@@ -583,8 +583,8 @@
 		<object-name>ALT</object-name>
 		<condition>
 			<equals>
-				<property>controls/autoflight/vertical-mode</property>
-				<value>1</value>
+				<property>it-autoflight/input/vert</property>
+				<value>0</value>
 			</equals>
 		</condition>
 	</animation>
@@ -593,8 +593,8 @@
 		<object-name>FPA</object-name>
 		<condition>
 			<equals>
-				<property>controls/autoflight/vertical-mode</property>
-				<value>0</value>
+				<property>it-autoflight/input/vert</property>
+				<value>5</value>
 			</equals>
 		</condition>
 	</animation>
@@ -603,8 +603,8 @@
 		<object-name>VS</object-name>
 		<condition>
 			<equals>
-				<property>controls/autoflight/vertical-mode</property>
-				<value>2</value>
+				<property>it-autoflight/input/vert</property>
+				<value>1</value>
 			</equals>
 		</condition>
 	</animation>
@@ -616,8 +616,8 @@
 		<object-name>HDG</object-name>
 		<condition>
 			<equals>
-				<property>controls/autoflight/lateral-mode</property>
-				<value>1</value>
+				<property>it-autoflight/input/vert</property>
+				<value>0</value>
 			</equals>
 		</condition>
 	</animation>
@@ -632,7 +632,7 @@
 		<object-name>IAS1</object-name>
 		<condition>
 			<equals>
-				<property>controls/autoflight/speed-mode</property>
+				<property>it-autoflight/input/kts-mach</property>
 				<value>0</value>
 			</equals>
 		</condition>
@@ -645,7 +645,7 @@
 		<object-name>Mach.01</object-name>
 		<condition>
 			<equals>
-				<property>controls/autoflight/speed-mode</property>
+				<property>it-autoflight/input/kts-mach</property>
 				<value>1</value>
 			</equals>
 		</condition>
@@ -659,8 +659,8 @@
 		<condition>
 			<and>
 				<equals>
-					<property>controls/autoflight/lateral-mode</property>
-					<value>2</value>
+					<property>it-autoflight/input/lat</property>
+					<value>1</value>
 				</equals>
 				<equals>
 					<property>controls/autoflight/nav-mode</property>
@@ -675,8 +675,8 @@
 		<condition>
 			<and>
 				<equals>
-					<property>controls/autoflight/lateral-mode</property>
-					<value>2</value>
+					<property>it-autoflight/input/lat</property>
+					<value>1</value>
 				</equals>
 				<equals>
 					<property>controls/autoflight/nav-mode</property>
@@ -691,8 +691,8 @@
 		<condition>
 			<and>
 				<equals>
-					<property>controls/autoflight/lateral-mode</property>
-					<value>2</value>
+					<property>it-autoflight/input/lat</property>
+					<value>1</value>
 				</equals>
 				<equals>
 					<property>controls/autoflight/nav-mode</property>
@@ -708,7 +708,7 @@
 		<name>IAS setting 100's</name>
 		<type>textranslate</type>
 		<object-name>IAS100</object-name>
-		<property>controls/autoflight/speed-select</property>
+		<property>it-autoflight/input/spd-kts</property>
 		<factor>0.001</factor>
 		<step>100</step>
 		<axis>
@@ -720,7 +720,7 @@
 		<name>IAS setting 10's</name>
 		<type>textranslate</type>
 		<object-name>IAS10</object-name>
-		<property>controls/autoflight/speed-select</property>
+		<property>it-autoflight/input/spd-kts</property>
 		<factor>0.01</factor>
 		<step>10</step>
 		<axis>
@@ -732,7 +732,7 @@
 		<name>IAS setting 1's</name>
 		<type>textranslate</type>
 		<object-name>IAS1</object-name>
-		<property>controls/autoflight/speed-select</property>
+		<property>it-autoflight/input/spd-kts</property>
 		<factor>0.1</factor>
 		<step>1</step>
 		<axis>
@@ -745,7 +745,7 @@
 		<name>Mach setting 1's</name>
 		<type>textranslate</type>
 		<object-name>Mach1</object-name>
-		<property>/controls/autoflight/mach-select</property>
+		<property>it-autoflight/input/spd-mach</property>
 		<factor>0.1</factor>
 		<step>1</step>
 		<axis>
@@ -757,7 +757,7 @@
 		<name>Mach setting .1's</name>
 		<type>textranslate</type>
 		<object-name>Mach.1</object-name>
-		<property>/controls/autoflight/mach-select</property>
+		<property>it-autoflight/input/spd-mach</property>
 		<step>0.1</step>
 		<axis>
 			<x>0</x>
@@ -768,7 +768,7 @@
 		<name>Mach setting .01's</name>
 		<type>textranslate</type>
 		<object-name>Mach.01</object-name>
-		<property>/controls/autoflight/mach-select</property>
+		<property>it-autoflight/input/spd-mach</property>
 		<factor>10</factor>
 		<step>0.01</step>
 		<axis>
@@ -783,7 +783,7 @@
 		<name>Heading setting 100's</name>
 		<type>textranslate</type>
 		<object-name>Hdg100</object-name>
-		<property>controls/autoflight/heading-select</property>
+		<property>it-autoflight/input/hdg</property>
 		<factor>0.001</factor>
 		<step>100</step>
 		<axis>
@@ -795,7 +795,7 @@
 		<name>Heading setting 10's</name>
 		<type>textranslate</type>
 		<object-name>Hdg10</object-name>
-		<property>controls/autoflight/heading-select</property>
+		<property>it-autoflight/input/hdg</property>
 		<factor>0.01</factor>
 		<step>10</step>
 		<axis>
@@ -807,7 +807,7 @@
 		<name>Heading setting 1's</name>
 		<type>textranslate</type>
 		<object-name>Hdg1</object-name>
-		<property>controls/autoflight/heading-select</property>
+		<property>it-autoflight/input/hdg</property>
 		<factor>0.1</factor>
 		<step>1</step>
 		<axis>
@@ -823,7 +823,7 @@
 		<name>Altitude setting 10,000's</name>
 		<type>textranslate</type>
 		<object-name>Alt10000</object-name>
-		<property>controls/autoflight/altitude-select</property>
+		<property>it-autoflight/input/alt</property>
 		<factor>0.00001</factor>
 		<step>10000</step>
 		<axis>
@@ -835,7 +835,7 @@
 		<name>Altitude setting 1,000's</name>
 		<type>textranslate</type>
 		<object-name>Alt1000</object-name>
-		<property>controls/autoflight/altitude-select</property>
+		<property>it-autoflight/input/alt</property>
 		<factor>0.0001</factor>
 		<step>1000</step>
 		<axis>
@@ -847,7 +847,7 @@
 		<name>Altitude setting 100's</name>
 		<type>textranslate</type>
 		<object-name>Alt100</object-name>
-		<property>controls/autoflight/altitude-select</property>
+		<property>it-autoflight/input/alt</property>
 		<factor>0.001</factor>
 		<step>100</step>
 		<axis>
@@ -859,7 +859,7 @@
 		<name>Altitude setting 10's</name>
 		<type>textranslate</type>
 		<object-name>Alt10</object-name>
-		<property>controls/autoflight/altitude-select</property>
+		<property>it-autoflight/input/alt</property>
 		<factor>0.01</factor>
 		<step>10</step>
 		<axis>
@@ -871,7 +871,7 @@
 		<name>Altitude setting 1's</name>
 		<type>textranslate</type>
 		<object-name>Alt1</object-name>
-		<property>controls/autoflight/altitude-select</property>
+		<property>it-autoflight/input/alt</property>
 		<factor>0.1</factor>
 		<step>1</step>
 		<axis>
@@ -891,7 +891,7 @@
 		<object-name>VS1</object-name>
 		<condition>
 			<greater-than-equals>
-				<property>controls/autoflight/vertical-speed-select</property>
+				<property>it-autoflight/input/vs</property>
 				<value>0</value>
 			</greater-than-equals>
 		</condition>
@@ -900,7 +900,7 @@
 		<name>Vertical speed setting 1,000's</name>
 		<type>textranslate</type>
 		<object-name>VS1000</object-name>
-		<property>controls/autoflight/vertical-speed-select</property>
+		<property>it-autoflight/input/vs</property>
 		<factor>0.0001</factor>
 		<step>1000</step>
 		<axis>
@@ -912,7 +912,7 @@
 		<name>Vertical speed setting 100's</name>
 		<type>textranslate</type>
 		<object-name>VS100</object-name>
-		<property>controls/autoflight/vertical-speed-select</property>
+		<property>it-autoflight/input/vs</property>
 		<factor>0.001</factor>
 		<step>100</step>
 		<axis>
@@ -924,7 +924,7 @@
 		<name>Vertical speed setting 10's</name>
 		<type>textranslate</type>
 		<object-name>VS10</object-name>
-		<property>controls/autoflight/vertical-speed-select</property>
+		<property>it-autoflight/input/vs</property>
 		<factor>0.01</factor>
 		<step>10</step>
 		<axis>
@@ -936,7 +936,7 @@
 		<name>Vertical speed setting 1's</name>
 		<type>textranslate</type>
 		<object-name>VS1</object-name>
-		<property>controls/autoflight/vertical-speed-select</property>
+		<property>it-autoflight/input/vs</property>
 		<factor>0.1</factor>
 		<step>1</step>
 		<axis>
@@ -954,7 +954,7 @@
 		<object-name>VS-</object-name>
 		<condition>
 			<less-than>
-				<property>controls/autoflight/vertical-speed-select</property>
+				<property>it-autoflight/input/vs</property>
 				<value>0</value>
 			</less-than>
 		</condition>
@@ -963,7 +963,7 @@
 		<name>Negative vertical speed setting 1,000's</name>
 		<type>textranslate</type>
 		<object-name>VS-1000</object-name>
-		<property>controls/autoflight/vertical-speed-select</property>
+		<property>it-autoflight/input/vs</property>
 		<factor>0.0001</factor>
 		<step>1000</step>
 		<axis>
@@ -975,7 +975,7 @@
 		<name>Negative vertical speed setting 100's</name>
 		<type>textranslate</type>
 		<object-name>VS-100</object-name>
-		<property>controls/autoflight/vertical-speed-select</property>
+		<property>it-autoflight/input/vs</property>
 		<factor>0.001</factor>
 		<step>100</step>
 		<axis>
@@ -987,7 +987,7 @@
 		<name>Negative vertical speed setting 10's</name>
 		<type>textranslate</type>
 		<object-name>VS-10</object-name>
-		<property>controls/autoflight/vertical-speed-select</property>
+		<property>it-autoflight/input/vs</property>
 		<factor>0.01</factor>
 		<step>10</step>
 		<axis>
@@ -999,7 +999,7 @@
 		<name>Negative vertical speed setting 1's</name>
 		<type>textranslate</type>
 		<object-name>VS-1</object-name>
-		<property>controls/autoflight/vertical-speed-select</property>
+		<property>it-autoflight/input/vs</property>
 		<factor>0.1</factor>
 		<step>1</step>
 		<axis>

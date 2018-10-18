@@ -122,6 +122,8 @@ setlistener("sim/signals/fdm-initialized", func {
 		engineLoop(1);
 		apuLoop();
 	}, 2);
+	itaf.ap_init();
+    var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/E-jet-family/Systems/autopilot-dlg.xml");
 });
 
 # startup/shutdown functions

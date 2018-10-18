@@ -46,12 +46,12 @@
 
 		<systems>
 			<autopilot>
-				<name>Autopilot</name>
-				<path>Aircraft/E-jet-family/Systems/ERJ-autopilot.xml</path>
+				<name>IT-AUTOFLIGHT</name>
+				<path>Systems/it-autoflight.xml</path>
 			</autopilot>
 			<autopilot>
-				<name>Autopilot helpers</name>
-				<path>Aircraft/Generic/generic-autopilot-helper.xml</path>
+				<name>IT-AUTOTHRUST</name>
+				<path>Systems/it-autothrust.xml</path>
 			</autopilot>
 			<autopilot>
 				<name>Autobrake</name>
@@ -731,6 +731,50 @@
 			</key>
 		</keyboard>
 	</input>
+	
+	<it-autoflight>
+		<config>
+			<roll>
+				<kp-low>0.145</kp-low> <!-- Kp at low speed -->
+				<kp-high>0.07</kp-high> <!-- Kp at high speed -->
+				<ti>1.0</ti>
+				<td>0.0001</td>
+			</roll>
+			<pitch>
+				<kp-low>-0.17</kp-low> <!-- Kp at low speed -->
+				<kp-high>-0.07</kp-high> <!-- Kp at high speed -->
+				<ti>0.5</ti>
+				<td>0.001</td>
+			</pitch>
+			<cmd>
+				<roll-kp>-1.6</roll-kp>
+				<vorloc>-2.5</vorloc>
+				<alt-gain>-5</alt-gain>
+				<vs-low>0.0029</vs-low> <!-- Kp at low speed -->
+				<vs-high>0.0010</vs-high> <!-- Kp at high speed -->
+			</cmd>
+			<autoland> 
+				<kp-pitch>0.0051</kp-pitch>
+				<kp-rudder>-0.05</kp-rudder>
+			</autoland>
+			<rollout>
+				<defl-pitch>0.15</defl-pitch>
+				<kp-rudder>-0.02</kp-rudder>
+			</rollout>
+		</config>
+		<settings>
+			<auto-bank-max-deg>25</auto-bank-max-deg> <!-- Maximum Auto Bank Limit -->
+			<disable-final>0</disable-final> <!-- Disable the Final Controllers -->
+			<land-enable>1</land-enable> <!-- Enable/Disable Autoland -->
+			<land-flap>0.3</land-flap> <!-- Minimum Flap used for Landing -->
+			<retard-ft>50</retard-ft> <!-- Enable Thrust Retard -->
+			<retard-enable>1</retard-enable> <!-- AGL to Thrust Retard -->
+			<togaspd>160</togaspd> <!-- V2 + 10kts -->
+			<lat-agl-ft>50</lat-agl-ft> <!-- Set to 999999 if you do not want T/O to change automatically to LNAV (if armed) -->
+			<reduc-agl-ft>1500</reduc-agl-ft> <!-- Set to 999999 if you do not want TOGA to change automatically to FLCH -->
+			<autoland-without-ap>1</autoland-without-ap> <!-- Engage LAND and FLARE Modes even if the AP is off -->
+		</settings>
+	</it-autoflight>
 
 	<nasal>
 		<systems>
@@ -758,8 +802,11 @@
 			<file>Aircraft/E-jet-family/Nasal/dialogs.nas</file>
 		</dialogs>
 		<input>
-			<file>Aircraft/E-jet-family/Nasal/autopilot.nas</file>
+			<!--<file>Aircraft/E-jet-family/Nasal/autopilot.nas</file>-->
 			<file>Aircraft/737-800/Nasal/engine-fire.nas</file>
 		</input>
+		<itaf>
+			<file>Nasal/it-autoflight.nas</file>
+		</itaf>
 	</nasal>
 </PropertyList>

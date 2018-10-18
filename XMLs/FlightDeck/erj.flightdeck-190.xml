@@ -501,50 +501,27 @@
 <!-- HDG Knob Pick Animations -->
 
 	<animation>
-		<type>pick</type>
+		<type>knob</type>
 		<object-name>HDG.knob</object-name>
+		<center>
+			<x-m>-12.4104</x-m>
+			<y-m>-0.14647</y-m>
+			<z-m>1.20394</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
 		<action>
-			<button>0</button>
-			<button>3</button>
 			<repeatable type="bool">true</repeatable>
 			<binding>
 				<command>property-adjust</command>
-				<property>controls/autoflight/heading-select</property>
+				<property>it-autoflight/input/hdg</property>
 				<step type="double">1</step>
-				<max>360</max>
-			</binding>
-			<binding>
-				<command>property-assign</command>
-				<condition>
-					<greater-than>
-						<property>controls/autoflight/heading-select</property>
-						<value>360</value>
-					</greater-than>
-				</condition>
-				<property>controls/autoflight/heading-select</property>
-				<value>1</value>
-			</binding>
-		</action>
-		<action>
-			<button>1</button>
-			<button>4</button>
-			<repeatable type="bool">true</repeatable>
-			<binding>
-				<command>property-adjust</command>
-				<property>controls/autoflight/heading-select</property>
-				<step type="double">-1</step>
 				<min>0</min>
-			</binding>
-			<binding>
-				<command>property-assign</command>
-				<condition>
-					<less-than-equals>
-						<property>controls/autoflight/heading-select</property>
-						<value>0</value>
-					</less-than-equals>
-				</condition>
-				<property>controls/autoflight/heading-select</property>
-				<value>360</value>
+				<max>360</max>
+				<wrap>true</wrap>
 			</binding>
 		</action>
 	</animation>
@@ -562,11 +539,11 @@
 				<command>property-adjust</command>
 				<condition>
 					<equals>
-						<property>controls/autoflight/speed-mode</property>
+						<property>it-autoflight/input/kts-mach</property>
 						<value>0</value>
 					</equals>
 				</condition>
-				<property>controls/autoflight/speed-select</property>
+				<property>it-autoflight/input/spd-kts</property>
 				<step>1</step>
 				<max>350</max>
 			</binding>
@@ -574,11 +551,11 @@
 				<command>property-adjust</command>
 				<condition>
 					<equals>
-						<property>controls/autoflight/speed-mode</property>
+						<property>it-autoflight/input/kts-mach</property>
 						<value>1</value>
 					</equals>
 				</condition>
-				<property>controls/autoflight/mach-select</property>
+				<property>it-autoflight/input/spd-mach</property>
 				<step>0.01</step>
 				<max>1</max>
 			</binding>
@@ -591,11 +568,11 @@
 				<command>property-adjust</command>
 				<condition>
 					<equals>
-						<property>controls/autoflight/speed-mode</property>
+						<property>it-autoflight/input/kts-mach</property>
 						<value>0</value>
 					</equals>
 				</condition>
-				<property>controls/autoflight/speed-select</property>
+				<property>it-autoflight/input/spd-kts</property>
 				<step>-1</step>
 				<min>0</min>
 			</binding>
@@ -603,11 +580,11 @@
 				<command>property-adjust</command>
 				<condition>
 					<equals>
-						<property>controls/autoflight/speed-mode</property>
+						<property>it-autoflight/input/kts-mach</property>
 						<value>1</value>
 					</equals>
 				</condition>
-				<property>controls/autoflight/mach-select</property>
+				<property>it-autoflight/input/spd-mach</property>
 				<step>-0.01</step>
 				<min>0</min>
 			</binding>
@@ -625,7 +602,7 @@
 			<repeatable type="bool">true</repeatable>
 			<binding>
 				<command>property-adjust</command>
-				<property>controls/autoflight/altitude-select</property>
+				<property>it-autoflight/input/alt</property>
 				<step>100</step>
 				<max>50000</max>
 			</binding>
@@ -636,7 +613,7 @@
 			<repeatable type="bool">true</repeatable>
 			<binding>
 				<command>property-adjust</command>
-				<property>controls/autoflight/altitude-select</property>
+				<property>it-autoflight/input/alt</property>
 				<step>-100</step>
 				<min>0</min>
 			</binding>
@@ -654,7 +631,7 @@
 			<repeatable type="bool">true</repeatable>
 			<binding>
 				<command>property-adjust</command>
-				<property>controls/autoflight/vertical-speed-select</property>
+				<property>it-autoflight/input/vs</property>
 				<step>100</step>
 				<max>9000</max>
 			</binding>
@@ -664,7 +641,7 @@
 			<button>4</button>
 			<binding>
 				<command>property-adjust</command>
-				<property>controls/autoflight/vertical-speed-select</property>
+				<property>it-autoflight/input/vs</property>
 				<step>-100</step>
 				<min>-9000</min>
 			</binding>
@@ -682,14 +659,9 @@
 			<repeatable type="bool">true</repeatable>
 			<binding>
 				<command>property-adjust</command>
-				<property>controls/autoflight/pitch-select</property>
+				<property>it-autoflight/input/fpa</property>
 				<step type="double">1</step>
-				<max>360</max>
-			</binding>
-			<binding>
-				<command>property-assign</command>
-				<property>controls/autoflight/pitch-select</property>
-				<value>1</value>
+				<max>25</max>
 			</binding>
 		</action>
 		<action>
@@ -698,14 +670,9 @@
 			<repeatable type="bool">true</repeatable>
 			<binding>
 				<command>property-adjust</command>
-				<property>controls/autoflight/pitch-select</property>
+				<property>it-autoflight/input/fpa</property>
 				<step type="double">-1</step>
-				<min>0</min>
-			</binding>
-			<binding>
-				<command>property-assign</command>
-				<property>controls/autoflight/pitch-select</property>
-				<value>360</value>
+				<min>-25</min>
 			</binding>
 		</action>
 	</animation>
@@ -722,7 +689,7 @@
 			<repeatable type="bool">false</repeatable>
 			<binding>
 				<command>property-cycle</command>
-				<property>controls/autoflight/speed-mode</property>
+				<property>it-autoflight/input/kts-mach</property>
 				<value>0</value>
 				<value>1</value>
 			</binding>
@@ -739,7 +706,11 @@
 			<repeatable type="bool">false</repeatable>
 			<binding>
 				<command>property-toggle</command>
-				<property>controls/autoflight/flight-director/engage</property>
+				<property>it-autoflight/input/fd1</property>
+			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>it-autoflight/input/fd2</property>
 			</binding>
 		</action>
 	</animation>
@@ -747,7 +718,16 @@
 		<type>select</type>
 		<object-name>FD.light</object-name>
 		<condition>
-			<property>controls/autoflight/flight-director/engage</property>
+			<and>
+				<equals>
+					<property>it-autoflight/input/fd1</property>
+					<value>1</value>
+				</equals>
+				<equals>
+					<property>it-autoflight/input/fd2</property>
+					<value>1</value>
+				</equals>
+			</and>
 		</condition>
 	</animation>
 
@@ -760,10 +740,9 @@
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
 			<binding>
-				<command>property-cycle</command>
-				<property>controls/autoflight/lateral-mode</property>
-				<value>2</value>
-				<value>0</value>
+				<command>property-assign</command>
+				<property>it-autoflight/input/lat</property>
+				<value>1</value>
 			</binding>
 		</action>
 	</animation>
@@ -772,8 +751,8 @@
 		<object-name>NAV.light</object-name>
 		<condition>
 			<equals>
-				<property>controls/autoflight/lateral-mode</property>
-				<value>2</value>
+				<property>it-autoflight/input/lat</property>
+				<value>1</value>
 			</equals>
 		</condition>
 	</animation>
@@ -787,9 +766,8 @@
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
 			<binding>
-				<command>property-cycle</command>
-				<property>controls/autoflight/lateral-mode</property>
-				<value>1</value>
+				<command>property-assign</command>
+				<property>it-autoflight/input/lat</property>
 				<value>0</value>
 			</binding>
 		</action>
@@ -799,8 +777,8 @@
 		<object-name>HDG.light</object-name>
 		<condition>
 			<equals>
-				<property>controls/autoflight/lateral-mode</property>
-				<value>1</value>
+				<property>it-autoflight/input/lat</property>
+				<value>0</value>
 			</equals>
 		</condition>
 	</animation>
@@ -814,10 +792,9 @@
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
 			<binding>
-				<command>property-cycle</command>
-				<property>controls/autoflight/vertical-mode</property>
-				<value>3</value>
-				<value>0</value>
+				<command>property-assign</command>
+				<property>it-autoflight/input/vert</property>
+				<value>2</value>
 			</binding>
 		</action>
 	</animation>
@@ -826,8 +803,8 @@
 		<object-name>APP.light</object-name>
 		<condition>
 			<equals>
-				<property>controls/autoflight/vertical-mode</property>
-				<value>3</value>
+				<property>it-autoflight/input/vert</property>
+				<value>2</value>
 			</equals>
 		</condition>
 	</animation>
@@ -842,9 +819,9 @@
 			<repeatable type="bool">false</repeatable>
 			<binding>
 				<command>property-cycle</command>
-				<property>controls/autoflight/bank-angle-select</property>
-				<value>16</value>
-				<value>30</value>
+				<property>it-autoflight/input/bank-limit-sw</property>
+				<value>3</value>
+				<value>5</value>
 			</binding>
 		</action>
 	</animation>
@@ -853,8 +830,8 @@
 		<object-name>BANK.light</object-name>
 		<condition>
 			<equals>
-				<property>controls/autoflight/bank-angle-select</property>
-				<value>16</value>
+				<property>it-autoflight/input/bank-limit-sw</property>
+				<value>3</value>
 			</equals>
 		</condition>
 	</animation>
@@ -870,7 +847,7 @@
 			<repeatable type="bool">false</repeatable>
 			<binding>
 				<command>property-toggle</command>
-				<property>controls/autoflight/autopilot/engage</property>
+				<property>it-autoflight/input/ap1</property>
 			</binding>
 		</action>
 	</animation>
@@ -878,7 +855,7 @@
 		<type>select</type>
 		<object-name>AP.light</object-name>
 		<condition>
-			<property>controls/autoflight/autopilot/engage</property>
+			<property>it-autoflight/input/ap1</property>
 		</condition>
 	</animation>
 
@@ -933,7 +910,7 @@
 			<repeatable type="bool">false</repeatable>
 			<binding>
 				<command>property-toggle</command>
-				<property>controls/autoflight/autothrottle-engage</property>
+				<property>it-autoflight/input/athr</property>
 			</binding>
 		</action>
 	</animation>
@@ -941,14 +918,37 @@
 		<type>select</type>
 		<object-name>AT.light</object-name>
 		<condition>
-			<property>controls/autoflight/autothrottle-engage</property>
+			<property>it-autoflight/input/athr</property>
 		</condition>
 	</animation>
 
 <!-- VNAV -->
 
 <!-- FLCH -->
-
+<animation>
+		<type>pick</type>
+		<object-name>FLCH</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-assign</command>
+				<property>it-autoflight/input/vert</property>
+				<value>4</value>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>FLCH.light</object-name>
+		<condition>
+			<equals>
+				<property>it-autoflight/input/vert</property>
+				<value>4</value>
+			</equals>
+		</condition>
+	</animation>
+	
 <!-- ALT -->
 
 	<animation>
@@ -958,9 +958,8 @@
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
 			<binding>
-				<command>property-cycle</command>
-				<property>controls/autoflight/vertical-mode</property>
-				<value>1</value>
+				<command>property-assign</command>
+				<property>it-autoflight/input/vert</property>
 				<value>0</value>
 			</binding>
 		</action>
@@ -970,8 +969,8 @@
 		<object-name>ALT.light</object-name>
 		<condition>
 			<equals>
-				<property>controls/autoflight/vertical-mode</property>
-				<value>1</value>
+				<property>it-autoflight/input/vert</property>
+				<value>0</value>
 			</equals>
 		</condition>
 	</animation>
@@ -985,9 +984,9 @@
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
 			<binding>
-				<command>property-cycle</command>
-				<property>controls/autoflight/vertical-mode</property>
-				<value>0</value>
+				<command>property-assign</command>
+				<property>it-autoflight/input/vert</property>
+				<value>5</value>
 			</binding>
 		</action>
 	</animation>
@@ -996,8 +995,8 @@
 		<object-name>FPA.light</object-name>
 		<condition>
 			<equals>
-				<property>controls/autoflight/vertical-mode</property>
-				<value>0</value>
+				<property>it-autoflight/input/vert</property>
+				<value>5</value>
 			</equals>
 		</condition>
 	</animation>
@@ -1011,10 +1010,9 @@
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
 			<binding>
-				<command>property-cycle</command>
-				<property>controls/autoflight/vertical-mode</property>
-				<value>2</value>
-				<value>0</value>
+				<command>property-assign</command>
+				<property>it-autoflight/input/vert</property>
+				<value>1</value>
 			</binding>
 		</action>
 	</animation>
@@ -1023,8 +1021,8 @@
 		<object-name>VS.light</object-name>
 		<condition>
 			<equals>
-				<property>controls/autoflight/vertical-mode</property>
-				<value>2</value>
+				<property>it-autoflight/input/vert</property>
+				<value>1</value>
 			</equals>
 		</condition>
 	</animation>

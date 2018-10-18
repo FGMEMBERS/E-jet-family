@@ -243,7 +243,7 @@
       <property>sim/crashed</property>
       </not>
       <equals>
-       <property>instrumentation/flightdirector/fd-on</property>
+       <property>it-autoflight/input/fd1</property>
        <value>1</value>
       </equals>
      </and>
@@ -255,13 +255,13 @@
    <object-name>ap.annun</object-name>
    <condition>
        <equals>
-         <property>/instrumentation/flightdirector/autopilot-on</property>
+         <property>it-autoflight/input/ap1</property>
          <value>1</value>
        </equals>
    </condition>
  </animation>
 
-<animation>
+<!--<animation>
    <type>select</type>
    <object-name>vnav.annun</object-name>
    <condition>
@@ -270,7 +270,7 @@
          <value>0</value>
        </greater-than>
    </condition>
- </animation>
+ </animation>-->
 
 <animation>
    <type>select</type>
@@ -280,10 +280,10 @@
       <not>
       <property>sim/crashed</property>
       </not>
-       <greater-than>
-         <property>/instrumentation/flightdirector/lnav</property>
-         <value>0</value>
-       </greater-than>
+       <equals>
+         <property>/it-autoflight/input/lat</property>
+         <value>1</value>
+       </equals>
    </and>
    </condition>
  </animation>
@@ -293,7 +293,7 @@
    <object-name>FDbars</object-name>
    <condition>
        <equals>
-         <property>instrumentation/flightdirector/fd-on</property>
+         <property>it-autoflight/input/fd1</property>
          <value>1</value>
        </equals>
    </condition>
@@ -525,7 +525,7 @@
    <object-name>vs1000</object-name>
    <condition>
    <greater-than>
-    <property>autopilot/internal/vert-speed-fpm</property>
+    <property>it-autoflight/internal/vert-speed-fpm</property>
     <value>999.999</value>
    </greater-than>
   </condition>
@@ -536,7 +536,7 @@
    <object-name>vs-1000</object-name>
    <condition>
    <less-than>
-    <property>autopilot/internal/vert-speed-fpm</property>
+    <property>it-autoflight/internal/vert-speed-fpm</property>
     <value>-999.999</value>
    </less-than>
   </condition>
@@ -548,7 +548,7 @@
    <object-name>vs-10</object-name>
    <condition>
    <less-than>
-    <property>autopilot/internal/vert-speed-fpm</property>
+    <property>it-autoflight/internal/vert-speed-fpm</property>
     <value>0</value>
    </less-than>
   </condition>
@@ -560,7 +560,7 @@
    <object-name>vs10</object-name>
    <condition>
    <greater-than-equals>
-    <property>autopilot/internal/vert-speed-fpm</property>
+    <property>it-autoflight/internal/vert-speed-fpm</property>
     <value>0</value>
    </greater-than-equals>
   </condition>
@@ -572,11 +572,11 @@
    <condition>
    <and>
    <less-than>
-    <property>autopilot/internal/vert-speed-fpm</property>
+    <property>it-autoflight/internal/vert-speed-fpm</property>
     <value>0</value>
    </less-than>
    <greater-than>
-    <property>autopilot/internal/vert-speed-fpm</property>
+    <property>it-autoflight/internal/vert-speed-fpm</property>
     <value>-1000</value>
    </greater-than>
    </and>
@@ -588,7 +588,7 @@
    <object-name>vs-b</object-name>
    <condition>
    <less-than>
-    <property>autopilot/internal/vert-speed-fpm</property>
+    <property>it-autoflight/internal/vert-speed-fpm</property>
     <value>-999.999</value>
    </less-than>
   </condition>
@@ -1674,7 +1674,7 @@
   <animation>
    <type>textranslate</type>
    <object-name>alttext</object-name>
-   <property>autopilot/settings/target-altitude-ft</property>
+   <property>/it-autoflight/input/alt</property>
    <factor>0.00001</factor>
    <step>10000</step>
    <axis>
@@ -1687,7 +1687,7 @@
  <animation>
    <type>textranslate</type>
    <object-name>alttext.001</object-name>
-   <property>autopilot/settings/target-altitude-ft</property>
+   <property>/it-autoflight/input/alt</property>
    <factor>0.0001</factor>
    <step>1000</step>
    <axis>
@@ -1700,7 +1700,7 @@
  <animation>
    <type>textranslate</type>
    <object-name>alttext.002</object-name>
-   <property>autopilot/settings/target-altitude-ft</property>
+   <property>it-autoflight/input/alt</property>
    <factor>0.001</factor>
    <step>100</step>
    <axis>
@@ -1713,7 +1713,7 @@
  <animation>
    <type>textranslate</type>
    <object-name>alttext.003</object-name>
-   <property>autopilot/settings/target-altitude-ft</property>
+   <property>it-autoflight/input/alt</property>
    <factor>0.01</factor>
    <step>10</step>
    <axis>
@@ -1726,7 +1726,7 @@
  <animation>
    <type>textranslate</type>
    <object-name>alttext.004</object-name>
-   <property>autopilot/settings/target-altitude-ft</property>
+   <property>it-autoflight/input/alt</property>
    <factor>0.1</factor>
    <step>1</step>
    <axis>
@@ -1803,7 +1803,7 @@
   <animation>
    <type>textranslate</type>
    <object-name>hdg100</object-name>
-   <property>autopilot/settings/heading-bug-deg</property>
+   <property>it-autoflight/input/hdg</property>
    <factor>0.001</factor>
    <step>100</step>
    <axis>
@@ -1816,7 +1816,7 @@
   <animation>
    <type>textranslate</type>
    <object-name>hdg10</object-name>
-   <property>autopilot/settings/heading-bug-deg</property>
+   <property>it-autoflight/input/hdg</property>
    <factor>0.01</factor>
    <step>10</step>
    <axis>
@@ -1829,7 +1829,7 @@
   <animation>
    <type>textranslate</type>
    <object-name>hdg1</object-name>
-   <property>autopilot/settings/heading-bug-deg</property>
+   <property>it-autoflight/input/hdg</property>
    <factor>0.1</factor>
    <step>1</step>
    <axis>
@@ -1842,7 +1842,7 @@
   <animation>
    <type>textranslate</type>
    <object-name>ias100</object-name>
-   <property>autopilot/settings/target-speed-kt</property>
+   <property>it-autoflight/input/spd-kts</property>
    <factor>0.001</factor>
    <step>100</step>
    <axis>
@@ -1855,7 +1855,7 @@
   <animation>
    <type>textranslate</type>
    <object-name>ias10</object-name>
-   <property>autopilot/settings/target-speed-kt</property>
+   <property>it-autoflight/input/spd-kts</property>
    <factor>0.01</factor>
    <step>10</step>
    <axis>
@@ -1868,7 +1868,7 @@
   <animation>
    <type>textranslate</type>
    <object-name>ias1</object-name>
-   <property>autopilot/settings/target-speed-kt</property>
+   <property>it-autoflight/input/spd-kts</property>
    <factor>0.1</factor>
    <step>1</step>
    <axis>
@@ -2193,61 +2193,7 @@
   </axis>
  </animation>
 
- <animation>
-   <type>rotate</type>
-   <object-name>pfdhdg</object-name>
-   <property>autopilot/internal/fdm-heading-bug-error-deg</property>
-   <interpolation>
-     <entry>
-       <ind>-180.0</ind>
-       <dep>-105.0</dep>
-     </entry>
-     <entry>
-       <ind>-105.0</ind>
-       <dep>-105.0</dep>
-     </entry>
-     <entry>
-       <ind> 0.0</ind>
-       <dep>0.0</dep>
-     </entry>
-     <entry>
-       <ind> 105.0</ind>
-       <dep>105.0</dep>
-     </entry>
-     <entry>
-       <ind>180.0</ind>
-       <dep>105.0</dep>
-     </entry>
-   </interpolation>
-   <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>-0.065</z-m>
-   </center>
-   <axis>
-     <x>-1.0</x>
-     <y>0.0</y>
-     <z>0.0</z>
-   </axis>
- </animation>
-
- <animation>
-   <type>rotate</type>
-   <object-name>vector.001</object-name>
-   <property>orientation/roll-deg[0]</property>
-   <axis>
-     <x>1.0</x>
-     <y>0.0</y>
-     <z>0.0</z>
-   </axis>
-   <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>0</z-m>
-   </center>
- </animation>
-
- <animation> 
+ <!--<animation> 
 	<type>translate</type>
 	<object-name>vector.001</object-name>
 	<property>autopilot/settings/true-heading-deg[0]</property>
@@ -2282,9 +2228,9 @@
 	<y>1</y>
 	<z>0</z>
 	</axis>
-</animation>
+</animation>-->
 
- <animation>
+ <!--<animation>
    <type>rotate</type>
    <object-name>vector.002</object-name>
    <property>autopilot/settings/true-heading-deg[0]</property>
@@ -2298,7 +2244,7 @@
      <y>0.0</y>
      <z>0.0</z>
    </axis>
- </animation>
+ </animation>-->
 
  <animation>
    <type>rotate</type>
@@ -2388,40 +2334,7 @@
      <z-m>0</z-m>
    </center>
  </animation>
-
- <animation>
-   <type>translate</type>
-   <object-name>pfdhdg.001</object-name>
-   <property>autopilot/internal/fdm-heading-bug-error-deg</property>
-   <interpolation>
-     <entry>
-       <ind> -180.0</ind>
-       <dep>-0.0632</dep>
-     </entry>
-     <entry>
-       <ind>-6.0</ind>
-       <dep>-0.0632</dep>
-     </entry>
-     <entry>
-       <ind> 0.0</ind>
-       <dep>0.0</dep>
-     </entry>
-     <entry>
-       <ind> 6.0</ind>
-       <dep>0.0632</dep>
-     </entry>
-     <entry>
-       <ind>180.0</ind>
-       <dep>0.0632</dep>
-     </entry>
-   </interpolation>
-   <axis>
-     <x>0.0</x>
-     <y>1.0</y>
-     <z>0.0</z>
-   </axis>
- </animation>
-
+ 
  <animation>
    <type>translate</type>
    <object-name>gs</object-name>
@@ -2450,7 +2363,7 @@
   <animation>
    <type>textranslate</type>
    <object-name>vs1000</object-name>
-   <property>autopilot/internal/vert-speed-fpm</property>
+   <property>it-autoflight/internal/vert-speed-fpm</property>
    <factor>0.0001</factor>
    <step>1000.0</step>
    <axis>
@@ -2463,7 +2376,7 @@
   <animation>
    <type>textranslate</type>
    <object-name>vs-1000</object-name>
-   <property>autopilot/internal/vert-speed-fpm</property>
+   <property>it-autoflight/internal/vert-speed-fpm</property>
    <factor>-0.0001</factor>
    <step>1000.0</step>
    <axis>
@@ -2476,7 +2389,7 @@
   <animation>
    <type>textranslate</type>
    <object-name>vs100</object-name>
-   <property>autopilot/internal/vert-speed-fpm</property>
+   <property>it-autoflight/internal/vert-speed-fpm</property>
    <factor>0.001</factor>
    <step>100.0</step>
    <axis>
@@ -2489,7 +2402,7 @@
   <animation>
    <type>textranslate</type>
    <object-name>vs-100</object-name>
-   <property>autopilot/internal/vert-speed-fpm</property>
+   <property>it-autoflight/internal/vert-speed-fpm</property>
    <factor>-0.001</factor>
    <step>100.0</step>
    <axis>
@@ -2502,7 +2415,7 @@
   <animation>
    <type>textranslate</type>
    <object-name>vs10</object-name>
-   <property>autopilot/internal/vert-speed-fpm</property>
+   <property>it-autoflight/internal/vert-speed-fpm</property>
    <factor>0.01</factor>
    <step>10.0</step>
    <axis>
@@ -2515,7 +2428,7 @@
   <animation>
    <type>textranslate</type>
    <object-name>vs-10</object-name>
-   <property>autopilot/internal/vert-speed-fpm</property>
+   <property>it-autoflight/internal/vert-speed-fpm</property>
    <factor>-0.01</factor>
    <step>10.0</step>
    <axis>
