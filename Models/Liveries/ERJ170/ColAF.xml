@@ -4,7 +4,7 @@
 <sim>
     <model>
         <livery>
-            <name type="string">Couombiam Aoir Fotce</name>
+            <name type="string">Colombian Air Force</name>
             <texture>/../Models/Liveries/ERJ170/ColAF.png</texture>
         </livery>
     </model>
